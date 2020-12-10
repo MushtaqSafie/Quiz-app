@@ -7,39 +7,32 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <!-- Custom Css -->
   <link rel="stylesheet" href="Assets/Style.css">
-</head>
-<body>
-
   <!-- jquery -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
 
-
-<!-- <h1 id="scoresList"></h1>
-<ul>
-  <li><span id="userName-1"></span>mushtaq: <span id="score">22</span></li>
-  <li><span id="userName-2"></span>mushtaq2: <span id="score">22</span></li>
-</ul> -->
-
+<body>
 <div class="container mt-5">
   <div class="d-flex justify-content-center row">
     <div class="col-md-10 col-lg-10">
         <div class="border">
             <div class="question bg-white p-3 border-bottom">
                 <div class="d-flex flex-row justify-content-between align-items-center mcq">
-                    <h4>JavaScript Quiz</h4><span id="currentScore">YOUR SCORE: (0 of 10)</span>
+                    <h4>JavaScript Quiz</h4>
+                    <button class="btn btn-dark d-flex align-items-center highestScore" type="button">Highest Score</button>
                 </div>
             </div>
-
+            
 
 
             <div id="question0" class="bg-white p-3 border-bottom text-center">
                 <h3 class="text-danger">JavaScript Quiz Challenge</h3>
-                <p class="question mt-1 ml-2">Read each question carefully and choose the correct answer.</p>
-                <p class="question mt-1 ml-2">Be careful that each wrong answer penalize your limit time by ten seconds.</p>
-                <p class="question mt-1 ml-2">You have got 10 questions and 60 seconds to GO!</p>
-                <p class="question mt-1 ml-2">GOOD LUCK</p>
+                <p class="mt-1 ml-2">Read each question carefully and choose the correct answer.</p>
+                <p class="mt-1 ml-2">Be careful that each wrong answer penalize your limit time by ten seconds.</p>
+                <p class="mt-1 ml-2">You have got 10 questions and 60 seconds to GO!</p>
+                <p class="mt-1 ml-2">GOOD LUCK</p>
                 <div class="ml-2">
-                  <button class="ansBtn btn btn-info align-items-center" type="button">Start Now</button>
+                  <button class="ansBtn btn btn-info align-items-center start" type="button">Start Now</button>
                 </div>
             </div>
 
@@ -279,9 +272,9 @@
 
 
             <div class="d-flex flex-row justify-content-between align-items-center p-3 bg-white">
-              <div>Timer: 60 sec</div>
+              <div id="timer" >Timer: 60 sec</div>
               <div id="feedback"></div>
-              <button class="btn btn-dark d-flex align-items-center" type="button">Highest Score</button>
+              <div id="currentScore">YOUR SCORE: (0 of 10)</div>
             </div>
         </div>
     </div>

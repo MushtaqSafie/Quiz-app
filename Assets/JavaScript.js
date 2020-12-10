@@ -1,6 +1,8 @@
 $(document).ready(function() {
-  var n = 0;
   var userScore = 0;
+  var userScoreTime = 0;   
+  var n = 0;
+
   var numberOfQuestions = 10;
   var questionTag = [];
   var secondsLeft = 60;
@@ -9,6 +11,21 @@ $(document).ready(function() {
     var varName = "question"+i;
     questionTag.push(varName);
   }
+
+  function setTime() {
+    var timerInterval = setInterval(function() {
+      secondsLeft--;
+      if(secondsLeft === 0) {
+        clearInterval(timerInterval);
+      }
+      $("#timer").text("Timer: "+ secondsLeft +" sec");
+    }, 500);
+  }
+
+  $(".start").on("click", function() {
+    setTime();
+  });
+
 
   $(".correct").on("click", function() {
     userScore = userScore + 1;
@@ -26,9 +43,8 @@ $(document).ready(function() {
     }, 500);
   });
 
-
-  // on click of any button do this function - Hidden current Question - then show next question
   $(".ansBtn").on("click", function() {
+
     if (n < questionTag.length-1) {
       var toHide = document.getElementById(questionTag[n]);
       toHide.setAttribute("hidden","");
@@ -40,14 +56,22 @@ $(document).ready(function() {
       toHide.setAttribute("hidden","");
       $("#feedback").text("");
       // else ask user to submit there score
-      console.log("end")
+      scoreList();
     }
       // display the current score
     
       // set the timer interval here, with global vericable
-
-
   });
 
+  function scoreList() {
+    window.location.href ="scorepage.html";
+    console.log("ends");
+    // userScoreTime = secondsLeft;
+    console.log(secondsLeft);
+  };
+
+  $(".tryagin").on("click", function() {
+    window.location.href ="index.html";
+  });
 
 });

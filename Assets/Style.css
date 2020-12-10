@@ -21,3 +21,20 @@ h3 {
   color: gray;
   font-style: italic;
 }
+
+.nounderline {
+  text-decoration: none !important;
+  color: #212529 !important;
+}
+
+.list-group {
+  padding-left: 15% !important;
+  padding-right: 15% !important;
+}
+
+@media (max-width: 576px) { 
+  .list-group {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+ }
