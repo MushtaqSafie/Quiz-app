@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Quiz</title>
+  <!-- jQuery -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Custom Css -->
+  <link rel="stylesheet" href="Assets/Style.css">
+</head>
+<body>
+
+  <!-- jquery -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<!-- <h1 id="scoresList"></h1>
+<ul>
+  <li><span id="userName-1"></span>mushtaq: <span id="score">22</span></li>
+  <li><span id="userName-2"></span>mushtaq2: <span id="score">22</span></li>
+</ul> -->
+
+<div class="container mt-5">
+  <div class="d-flex justify-content-center row">
+    <div class="col-md-10 col-lg-10">
+        <div class="border">
+            <div class="question bg-white p-3 border-bottom">
+                <div class="d-flex flex-row justify-content-between align-items-center mcq">
+                    <h4>JavaScript Quiz</h4><span id="currentScore">YOUR SCORE: (0 of 10)</span>
+                </div>
+            </div>
+
+
+
+            <div id="question0" class="bg-white p-3 border-bottom text-center">
+                <h3 class="text-danger">JavaScript Quiz Challenge</h3>
+                <p class="question mt-1 ml-2">Read each question carefully and choose the correct answer.</p>
+                <p class="question mt-1 ml-2">Be careful that each wrong answer penalize your limit time by ten seconds.</p>
+                <p class="question mt-1 ml-2">You have got 10 questions and 60 seconds to GO!</p>
+                <p class="question mt-1 ml-2">GOOD LUCK</p>
+                <div class="ml-2">
+                  <button class="ansBtn btn btn-info align-items-center" type="button">Start Now</button>
+                </div>
+            </div>
+
+
+
+            <div hidden id="question1" class="bg-white p-3 border-bottom">
+                <div class="d-flex flex-row align-items-center question-title">
+                    <h3 class="text-danger">Q.</h3>
+                    <h5 class="question mt-1 ml-2">Which property of JavaScript array returns the number of elements within that array?</h5>
+                </div>
+
+                <div class="ans ml-2">
+                  <button class="ansBtn btn btn-info align-items-center correct" type="button">length</button>
+                </div>
+
+                <div class="ans ml-2">
+                  <button class="ansBtn btn btn-info wrong align-items-center" type="button">size</button>
+                </div>
+
+                <div class="ans ml-2">
+                  <button class="ansBtn btn btn-info wrong align-items-center" type="button">elementsNum</button>
+                </div>
+
+                <div class="ans ml-2">
+                  <button class="ansBtn btn btn-info wrong align-items-center" type="button">sizeOf</button>
+                </div>
+            </div>
+
+            <div hidden id="question2" class="bg-white p-3 border-bottom">
+                <div class="d-flex flex-row align-items-center question-title">
+                    <h3 class="text-danger">Q.</h3>
+                    <h5 class="question mt-1 ml-2">Which of these script tag in a HTML file is used to link the JavaScript source file?</h5>
+                </div>
+
+                <div class="ans ml-2">
+                  <button class="ansBtn btn btn-info wrong align-items-center" type="button">link</button>
+                </div>
+
+                <div class="ans ml-2">
+                  <button class="ansBtn btn btn-info wrong align-items-center" type="button">jslink</button>
+                </div>
+
+                <div class="ans ml-2">
+                  <button class="ansBtn btn btn-info align-items-center correct" type="button">src</button>
+                </div>
+
+                <div class="ans ml-2">
+                  <button class="ansBtn btn btn-info wrong align-items-center" type="button">js</button>
+                </div>
+            </div>
+
+            <div hidden id="question3" class="bg-white p-3 border-bottom">
+                <div class="d-flex flex-row align-items-center question-title">
+                    <h3 class="text-danger">Q.</h3>
+                    <h5 class="question mt-1 ml-2">What is the value of a variable which is declared but not set to a value yet?</h5>
+                </div>
+
+                <div class="ans ml-2">
+                  <button class="ansBtn btn btn-info wrong align-items-center" type="button">null</button>
+                </div>
+
+                <div class="ans ml-2">
+                  <button class="ansBtn btn btn-info align-items-center correct" type="button">undefined</button>
+                </div>
+
+                <div class="ans ml-2">
+                  <button class="ansBtn btn btn-info wrong align-items-center" type="button">""</button>
+                </div>
+
+                <div class="ans ml-2">
+                  <button class="ansBtn btn btn-info wrong align-items-center" type="button">value</button>
+                </div>
+            </div>
+
+            <div hidden id="question4" class="bg-white p-3 border-bottom">
+                <div class="d-flex flex-row align-items-center question-title">
+                    <h3 class="text-danger">Q.</h3>
+                    <h5 class="question mt-1 ml-2">Which of the following statements about JavaScript is FALSE?</h5>
+                </div>
+
+                <div class="ans ml-2">
+                  <button class="ansBtn btn btn-info align-items-center correct" type="button">All variables must be declared using "var"</button>
+                </div>
+
+                <div class="ans ml-2">
+                  <button class="ansBtn btn btn-info wrong align-items-center" type="button">JavaScript is a case sensitive</button>
+                </div>
+
+                <div class="ans ml-2">
+                  <button class="ansBtn btn btn-info wrong align-items-center" type="button">JavaScript strings can be defined within single quotes</button>
+                </div>
+
+                <div class="ans ml-2">
+                  <button class="ansBtn btn btn-info wrong align-items-center" type="button">var keyword assign a variable</button>
+                </div>
+            </div>
+
+            <div hidden id="question5" class="bg-white p-3 border-bottom">
+              <div class="d-flex flex-row align-items-center question-title">
+                  <h3 class="text-danger">Q.</h3>
+                  <h5 class="question mt-1 ml-2">Which of these methods will retrieve an HTML element into JavaScript based on its id attribute?</h5>
+              </div>
+
+              <div class="ans ml-2">
+                <button class="ansBtn btn btn-info wrong align-items-center" type="button">console.getElement()</button>
+              </div>
+
+              <div class="ans ml-2">
+                <button class="ansBtn btn btn-info wrong align-items-center" type="button">window.elementId()</button>
+              </div>
+
+              <div class="ans ml-2">
+                <button class="ansBtn btn btn-info align-items-center correct" type="button">document.getElementById()</button>
+              </div>
+
+              <div class="ans ml-2">
+                <button class="ansBtn btn btn-info wrong align-items-center" type="button">document.alert(id)</button>
+              </div>
+          </div>
+
+            <div hidden id="question6" class="bg-white p-3 border-bottom">
+              <div class="d-flex flex-row align-items-center question-title">
+                  <h3 class="text-danger">Q.</h3>
+                  <h5 class="question mt-1 ml-2">Which of these methods can be used to write a message from JavaScript code to the browser console?</h5>
+              </div>
+
+              <div class="ans ml-2">
+                <button class="ansBtn btn btn-info wrong align-items-center" type="button">console.write()</button>
+              </div>
+
+              <div class="ans ml-2">
+                <button class="ansBtn btn btn-info wrong align-items-center" type="button">console.record()</button>
+              </div>
+
+              <div class="ans ml-2">
+                <button class="ansBtn btn btn-info align-items-center correct" type="button">console.log()</button>
+              </div>
+
+              <div class="ans ml-2">
+                <button class="ansBtn btn btn-info wrong align-items-center" type="button">document.log()</button>
+              </div>
+          </div>
+
+            <div hidden id="question7" class="bg-white p-3 border-bottom">
+              <div class="d-flex flex-row align-items-center question-title">
+                  <h3 class="text-danger">Q.</h3>
+                  <h5 class="question mt-1 ml-2">Which of these JavaScript functions can be used to receive a text input from a user?</h5>
+              </div>
+
+              <div class="ans ml-2">
+                <button class="ansBtn btn btn-info wrong align-items-center" type="button">alert</button>
+              </div>
+
+              <div class="ans ml-2">
+                <button class="ansBtn btn btn-info wrong align-items-center" type="button">getText</button>
+              </div>
+
+              <div class="ans ml-2">
+                <button class="ansBtn btn btn-info wrong align-items-center" type="button">confirm</button>
+              </div>
+
+              <div class="ans ml-2">
+                <button class="ansBtn btn btn-info align-items-center correct" type="button">prompt</button>
+              </div>
+          </div>
+
+            <div hidden id="question8" class="bg-white p-3 border-bottom">
+              <div class="d-flex flex-row align-items-center question-title">
+                  <h3 class="text-danger">Q.</h3>
+                  <h5 class="question mt-1 ml-2">Which of these statements about JavaScript is FALSE?</h5>
+              </div>
+
+              <div class="ans ml-2">
+                <button class="ansBtn btn btn-info wrong align-items-center" type="button">It is a programming language</button>
+              </div>
+
+              <div class="ans ml-2">
+                <button class="ansBtn btn btn-info wrong align-items-center" type="button">It can be executed by a web browser</button>
+              </div>
+
+              <div class="ans ml-2">
+                <button class="ansBtn btn btn-info align-items-center correct" type="button">It is incompatible with most browsers</button>
+              </div>
+
+              <div class="ans ml-2">
+                <button class="ansBtn btn btn-info wrong align-items-center" type="button">It can control the behaviour of a web page</button>
+              </div>
+          </div>
+
+            <div hidden id="question9" class="bg-white p-3 border-bottom">
+              <div class="d-flex flex-row align-items-center question-title">
+                  <h3 class="text-danger">Q.</h3>
+                  <h5 class="question mt-1 ml-2">Which of these represents a “truthy” value in JavaScript?</h5>
+              </div>
+
+              <div class="ans ml-2">
+                <button class="ansBtn btn btn-info align-items-center correct" type="button">25</button>
+              </div>
+
+              <div class="ans ml-2">
+                <button class="ansBtn btn btn-info wrong align-items-center" type="button">0</button>
+              </div>
+
+              <div class="ans ml-2">
+                <button class="ansBtn btn btn-info wrong align-items-center" type="button">[]</button>
+              </div>
+
+              <div class="ans ml-2">
+                <button class="ansBtn btn btn-info wrong align-items-center" type="button">{}</button>
+              </div>
+          </div>
+
+            <div hidden id="question10" class="bg-white p-3 border-bottom">
+              <div class="d-flex flex-row align-items-center question-title">
+                  <h3 class="text-danger">Q.</h3>
+                  <h5 class="question mt-1 ml-2">What is the result of the operation Math.floor(14.9)?</h5>
+              </div>
+
+              <div class="ans ml-2">
+                <button class="ansBtn btn btn-info wrong align-items-center" type="button">15.9</button>
+              </div>
+
+              <div class="ans ml-2">
+                <button class="ansBtn btn btn-info wrong align-items-center" type="button">15</button>
+              </div>
+
+              <div class="ans ml-2">
+                <button class="ansBtn btn btn-info align-items-center correct" type="button">14</button>
+              </div>
+
+              <div class="ans ml-2">
+                <button class="ansBtn btn btn-info wrong align-items-center" type="button">[1, 4, 9]</button>
+              </div>
+          </div>
+
+
+
+
+            <div class="d-flex flex-row justify-content-between align-items-center p-3 bg-white">
+              <div>Timer: 60 sec</div>
+              <div id="feedback"></div>
+              <button class="btn btn-dark d-flex align-items-center" type="button">Highest Score</button>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+  <script src="Assets/JavaScript.js"></script>
+</body>
+</html>

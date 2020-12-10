@@ -1,0 +1,23 @@
+body {
+background-color: #eee
+
+}
+
+.ans {
+    margin-left: 36px !important;
+    margin-top: 10px !important;
+}
+
+.border {
+  margin: 5px;
+}
+
+h3 {
+  margin-bottom: 20px;
+}
+
+#feedback {
+  text-decoration: underline gray;
+  color: gray;
+  font-style: italic;
+}
