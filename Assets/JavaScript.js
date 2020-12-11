@@ -32,7 +32,7 @@ $(document).ready(function() {
     userScore = userScore + 1;
     $("#currentScore").text("YOUR SCORE: ("+userScore+" of 10)");
     $("#feedback").text("Correct!");
-    var feedbackTimeOut = setTimeout(function setTime() {
+    var feedbackTimeOut = setTimeout(function() {
       $("#feedback").text("");
     }, 500);    
   });
@@ -40,7 +40,7 @@ $(document).ready(function() {
   $(".wrong").on("click", function() {
     $("#feedback").text("Wrong!");
     secondsLeft = secondsLeft - 10;
-    var feedbackTimeOut = setTimeout(function setTime() {
+    var feedbackTimeOut = setTimeout(function() {
       $("#feedback").text("");
     }, 500);
   });
@@ -63,6 +63,8 @@ $(document).ready(function() {
   function scoreList() {
     $(".quiz").attr("hidden", "");
     $(".scorePage").removeAttr("hidden");
+    // set the time and score
+    $(".currentscore").text("("+userScore+" of 10)");
   };
 
   $(".tryagin").on("click", function() {
@@ -72,6 +74,6 @@ $(document).ready(function() {
   $(".highestscore").on("click", function() {
     $(".scorePage").removeAttr("hidden");
     $(".quiz").attr("hidden", "");
-  //  set the tryagin and submit the score to hidden
+    $(".scoretitle").attr("hidden", "");
   });
 });
