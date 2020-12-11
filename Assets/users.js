@@ -1,1 +1,1 @@
-console.log(secondsLeft);
+console.log("secondsLeft");

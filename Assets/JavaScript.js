@@ -15,11 +15,12 @@ $(document).ready(function() {
   function setTime() {
     var timerInterval = setInterval(function() {
       secondsLeft--;
-      if(secondsLeft === 0) {
+      if(secondsLeft <= 0) {
         clearInterval(timerInterval);
+        scoreList();
       }
       $("#timer").text("Timer: "+ secondsLeft +" sec");
-    }, 500);
+    }, 1000);
   }
 
   $(".start").on("click", function() {
@@ -38,13 +39,13 @@ $(document).ready(function() {
 
   $(".wrong").on("click", function() {
     $("#feedback").text("Wrong!");
+    secondsLeft = secondsLeft - 10;
     var feedbackTimeOut = setTimeout(function setTime() {
       $("#feedback").text("");
     }, 500);
   });
 
   $(".ansBtn").on("click", function() {
-
     if (n < questionTag.length-1) {
       var toHide = document.getElementById(questionTag[n]);
       toHide.setAttribute("hidden","");
@@ -55,23 +56,19 @@ $(document).ready(function() {
       var toHide = document.getElementById(questionTag[n]);
       toHide.setAttribute("hidden","");
       $("#feedback").text("");
-      // else ask user to submit there score
       scoreList();
     }
-      // display the current score
-    
-      // set the timer interval here, with global vericable
   });
 
   function scoreList() {
     window.location.href ="scorepage.html";
-    console.log("ends");
-    // userScoreTime = secondsLeft;
-    console.log(secondsLeft);
   };
 
   $(".tryagin").on("click", function() {
     window.location.href ="index.html";
   });
-
+  $(".highestscore").on("click", function() {
+    window.location.href ="scorepage.html"; 
+  //  set the tryagin and submit the score to hidden
+  });
 });

@@ -27,13 +27,12 @@ h3 {
   color: #212529 !important;
 }
 
-.list-group {
-  padding-left: 15% !important;
-  padding-right: 15% !important;
+.list-field {
+  padding: 5px 15% !important;
 }
 
 @media (max-width: 576px) { 
-  .list-group {
+  .list-field {
     padding-left: 10px !important;
     padding-right: 10px !important;
   }
