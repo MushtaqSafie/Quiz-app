@@ -1,16 +1,6 @@
 $(document).ready(function() {
   var userScore = 0;
-  var userScoreTime = 0;   
-  var n = 0;
-
-  var numberOfQuestions = 10;
-  var questionTag = [];
   var secondsLeft = 60;
-
-  for (i=0; i < numberOfQuestions+1; i++){
-    var varName = "question"+i;
-    questionTag.push(varName);
-  }
 
   function setTime() {
     var timerInterval = setInterval(function() {
@@ -27,9 +17,8 @@ $(document).ready(function() {
     setTime();
   });
 
-
   $(".correct").on("click", function() {
-    userScore = userScore + 1;
+    userScore++;
     $("#currentScore").text("YOUR SCORE: ("+userScore+" of 10)");
     $("#feedback").text("Correct!");
     var feedbackTimeOut = setTimeout(function() {
@@ -39,12 +28,20 @@ $(document).ready(function() {
 
   $(".wrong").on("click", function() {
     $("#feedback").text("Wrong!");
-    secondsLeft = secondsLeft - 10;
+    secondsLeft = secondsLeft - 5;
     var feedbackTimeOut = setTimeout(function() {
       $("#feedback").text("");
     }, 500);
   });
-  
+
+  var numberOfQuestions = parseInt(localStorage.getItem("numberOfQuestion"));
+  var questionTag = [];
+
+  for (i=0; i < numberOfQuestions+1; i++){
+    var varName = "question"+i;
+    questionTag.push(varName);
+  }
+  var n = 0;
   $(".ansBtn").on("click", function() {
     if (n < questionTag.length-1) {
       var toHide = document.getElementById(questionTag[n]);
@@ -60,10 +57,20 @@ $(document).ready(function() {
     }
   });
 
+  $(".submitbtn").on("click", function() {
+      var userNameLi = $("<li>");
+      userNameLi.text($("#name").val()+" ("+ userScore +" of 10)");
+      userNameLi.attr("class", "list-group-item item");
+      $("#user-list").append(userNameLi);
+      var userNameScore = $("<span>");
+      userNameScore.attr("class", "userscore");
+      userNameScore.text(userScore);
+      $(".item").append(userNameScore);
+  });
+
   function scoreList() {
     $(".quiz").attr("hidden", "");
     $(".scorePage").removeAttr("hidden");
-    // set the time and score
     $(".currentscore").text("("+userScore+" of 10)");
   };
 
@@ -74,13 +81,5 @@ $(document).ready(function() {
   $(".highestscore").on("click", function() {
     $(".scorePage").removeAttr("hidden");
     $(".quiz").attr("hidden", "");
-    $(".scoretitle").attr("hidden", "");
-  });
-
-  $(".submitbtn").on("click", function() {
-    var listItems = $("<div>");
-    listItems.attr("class", "bg-white p-2 list-group list-field text-center userlist");
-    listItems.text("helos");
-    $("#highestscoreList").append(listItems);
   });
 });

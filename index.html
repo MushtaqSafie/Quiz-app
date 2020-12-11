@@ -25,70 +25,53 @@
               <button class="btn btn-info d-flex align-items-center highestscore" type="button">Highest Score</button>
             </div>
           </div>
-            
           <div id="question0" class="bg-white p-3 border-bottom text-center">
             <h3 class="text-danger">JavaScript Quiz Challenge</h3>
             <p class="mt-1 ml-2">Read each question carefully and choose the correct answer.</p>
-            <p class="mt-1 ml-2">Be careful that each wrong answer penalize your limit time by ten seconds.</p>
+            <p class="mt-1 ml-2">Be careful that each wrong answer penalize your limit time by 5 seconds.</p>
             <p class="mt-1 ml-2">You have got 10 questions and 60 seconds to GO!</p>
             <p class="mt-1 ml-2">GOOD LUCK</p>
             <div class="ml-2">
               <button class="ansBtn btn btn-info align-items-center start" type="button">Start Now</button>
             </div>
           </div>
-
           <div id="questionHandlebar"></div> 
-
           <div class="d-flex flex-row justify-content-between align-items-center p-3 bg-white">
             <div id="timer" >Timer: 60 sec</div>
             <div id="feedback"></div>
             <div id="currentScore">YOUR SCORE: (0 of 10)</div>
           </div>
         </div>
-
         <div hidden class="scorePage">
           <div class="bg-white p-3 border-bottom">
             <div class="d-flex flex-row justify-content-between align-items-center mcq">
               <h4><a class="nounderline" href="index.html">JavaScript Quiz</a></h4>
               <div class="ml-2">
               <button class="btn btn-info align-items-center tryagin" type="button">Try Again</button>
-            </div>
-          </div>
-        </div>
-              
-        <div class="scoretitle">
-          <div class="bg-white p-2 text-center">
-            <h3 class="text-danger">Highest Score</h3>
-            <p class="mt-1 ml-2">Great! You have got <span class="currentscore text-danger"></span> questions Correct!</p>
-            <p class="mt-1 ml-2">Would you like to submit your score?</p>
-          </div>
-  
-          <div class="bg-white input-group list-field">
-            <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-            <div class="input-group-prepend">
-              <button class="btn btn-info align-items-center submitbtn" type="button">Submit</button>
-            </div>
-          </div>
-
-          </div id="highestscoreList">
-            <div>
-              <div class="bg-white p-2 list-group list-field text-center">
-                <p class="list-group-item list-group-item-action list-group-item-primary">
-                  <span class="username">Mushtaq Safie</span>
-                  <span class="userscore">10/10</span>
-                </p>
-              </div>
-              <div class="bg-white p-2 list-group list-field text-center userlist">
-                <p class="list-group-item list-group-item-action list-group-item-primary">
-                  <span class="username">ushtaq SafieM</span>
-                  <span class="userscore">10/10</span>
-                </p>
               </div>
             </div>
-
+          </div>
+        
+          <div class="scoretitle">
+            <div class="bg-white p-2 text-center">
+              <h3 class="text-danger">Highest Score</h3>
+              <p class="mt-1 ml-2">Great! You have got <span class="currentscore text-danger"></span> questions Correct!</p>
+              <p class="mt-1 ml-2">Would you like to submit your score?</p>
+            </div>
+            <div class="bg-white input-group list-field">
+              <input id="name" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+              <div class="input-group-prepend">
+                <button class="btn btn-info align-items-center submitbtn" type="button">Submit</button>
+              </div>
+            </div>
+            <div id="highestscoreList">
+              <ul  id="user-list" class="list-group">
+             </ul>
+            </div>
             <div class="bg-white p-2 list-field">
-              <p class="mt-1 ml-2">@JavaScript Quiz!</p>
+                <p class="text-left mt-1 ml-2">@JavaScript Quiz!</p>
             </div>
+          </div>
         </div>
       </div>
     </div>

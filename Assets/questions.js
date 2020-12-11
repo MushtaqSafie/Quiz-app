@@ -42,6 +42,8 @@ $(document).ready(function() {
     }
   };
 
+  localStorage.setItem("numberOfQuestion", Object.keys(allQuestions).length);
+  // console.log(Object.keys(allQuestions).length);
 
   for (i=1; i <= 10; i++){  
     // the way you should access each object
