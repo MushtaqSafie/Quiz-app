@@ -61,14 +61,17 @@ $(document).ready(function() {
   });
 
   function scoreList() {
-    window.location.href ="scorepage.html";
+    $(".quiz").attr("hidden", "");
+    $(".scorePage").removeAttr("hidden");
   };
 
   $(".tryagin").on("click", function() {
     window.location.href ="index.html";
   });
+
   $(".highestscore").on("click", function() {
-    window.location.href ="scorepage.html"; 
+    $(".scorePage").removeAttr("hidden");
+    $(".quiz").attr("hidden", "");
   //  set the tryagin and submit the score to hidden
   });
 });
