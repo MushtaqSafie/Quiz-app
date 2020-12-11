@@ -44,7 +44,7 @@ $(document).ready(function() {
       $("#feedback").text("");
     }, 500);
   });
-
+  
   $(".ansBtn").on("click", function() {
     if (n < questionTag.length-1) {
       var toHide = document.getElementById(questionTag[n]);
@@ -75,5 +75,12 @@ $(document).ready(function() {
     $(".scorePage").removeAttr("hidden");
     $(".quiz").attr("hidden", "");
     $(".scoretitle").attr("hidden", "");
+  });
+
+  $(".submitbtn").on("click", function() {
+    var listItems = $("<div>");
+    listItems.attr("class", "bg-white p-2 list-group list-field text-center userlist");
+    listItems.text("helos");
+    $("#highestscoreList").append(listItems);
   });
 });
